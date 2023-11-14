@@ -19,7 +19,7 @@ async function connect() {
             console.error("Error connecting to mongo", err.reason);
         });
 }
-
+connect();
 
 const app = express();
 app.use(bodyParser.json());
