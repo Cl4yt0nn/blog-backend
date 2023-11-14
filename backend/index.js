@@ -32,7 +32,7 @@ app.use("/users", userRoute);
 app.use("/posts", blogRoute);
 
 // PORT
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log("Connected to port", port);
 });
