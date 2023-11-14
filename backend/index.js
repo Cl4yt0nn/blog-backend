@@ -7,17 +7,19 @@ require('dotenv').config()
 const userRoute = require('./routes/user.routes');
 const blogRoute = require('./routes/blog.routes');
 
-mongoose
-    .connect(process.env.MONGO)
-    .then((x) => {
-        console.log(
-            `Connected to Mongo! Database name: ${x.connections[0].name}`
-        )
-    })
-    .catch((err) => {
-        console.error("Error connecting to mongo", err.reason);
+async function connect() {
+    await mongoose
+        .connect(process.env.MONGO)
+        .then((x) => {
+            console.log(
+                `Connected to Mongo! Database name: ${x.connections[0].name}`
+            )
+        })
+        .catch((err) => {
+            console.error("Error connecting to mongo", err.reason);
+        });
+}
 
-    });
 
 const app = express();
 app.use(bodyParser.json());
