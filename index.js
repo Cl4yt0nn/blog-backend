@@ -8,7 +8,7 @@ const userRoute = require('./routes/user.routes');
 const blogRoute = require('./routes/blog.routes');
 
 async function connectToDB() {
-    mongoose
+    await mongoose
         .connect(process.env.MONGO)
         .then((x) => {
             console.log(
