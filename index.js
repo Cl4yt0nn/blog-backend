@@ -9,7 +9,7 @@ const blogRoute = require('./routes/blog.routes');
 
 async function connectToDB() {
     await mongoose
-        .connect(process.env.MONGO)
+        .connect('mongodb+srv://choag691:49Gyroscope!444@cluster0.votuvny.mongodb.net/BlogData')
         .then((x) => {
             console.log(
                 `Connected to Mongo! Database name: ${x.connections[0].name}`
